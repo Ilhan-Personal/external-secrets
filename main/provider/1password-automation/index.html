@@ -12,19 +12,19 @@
         <link rel="prev" href="../oracle-vault/">
       
       
-        <link rel="next" href="../webhook/">
+        <link rel="next" href="../1password-sdk/">
       
       
       <link rel="icon" href="../../pictures/eso-round-logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.12">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>1Password Secrets Automation - External Secrets Operator</title>
+        <title>1Password Connect Server - External Secrets Operator</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2afb09e1.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1Password Secrets Automation
+              1Password Connect Server
             
           </span>
         </div>
@@ -980,6 +980,8 @@
       
         
       
+        
+      
     
     
     
@@ -1291,6 +1293,29 @@
   
   <span class="md-ellipsis">
     UUID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/generator/mfa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MFA
     
   </span>
   
@@ -2276,6 +2301,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2792,7 +2821,7 @@
   
   
   <span class="md-ellipsis">
-    1Password Secrets Automation
+    1Password Connect Server
     
   </span>
   
@@ -2805,7 +2834,7 @@
   
   
   <span class="md-ellipsis">
-    1Password Secrets Automation
+    1Password Connect Server
     
   </span>
   
@@ -2832,7 +2861,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1Password Secrets Automation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deprecation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deprecation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deprecation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3018,6 +3056,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1password-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1Password SDK
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3381,6 +3442,29 @@
   
   <span class="md-ellipsis">
     Previder
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../openbao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenBao
     
   </span>
   
@@ -3993,7 +4077,16 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1Password Secrets Automation">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deprecation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Deprecation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deprecation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -4194,10 +4287,13 @@
   
 
 
-  <h1>1Password Secrets Automation</h1>
+  <h1>1Password Connect Server</h1>
 
 <h2 id="1password-secrets-automation">1Password Secrets Automation</h2>
 <p>External Secrets Operator integrates with <a href="https://1password.com/products/secrets/">1Password Secrets Automation</a> for secret management.</p>
+<h2 id="deprecation">Deprecation</h2>
+<p>Consider using <a href="../1password-sdk/">1Password SDK provider</a> instead. It uses an official <a href="https://developer.1password.com/docs/sdks">SDK for 1Password</a> created
+by 1Password. It's feature complete and has parity with this provider's capabilities.</p>
 <h3 id="important-note-about-this-documentation">Important note about this documentation</h3>
 <p><em><strong>The 1Password API calls the entries in vaults 'Items'. These docs use the same term.</strong></em></p>
 <h3 id="behavior">Behavior</h3>
@@ -4263,7 +4359,7 @@
 </code></pre></div></li>
 <li>Reference the secret in a SecretStore or ClusterSecretStore
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">staging</span>
@@ -4417,7 +4513,7 @@
 <ul>
 <li>Note: with this configuration a 1Password Item titled <code>my-env-config</code> is correlated to a ExternalSecret named <code>my-env-config</code> that results in a Kubernetes secret named <code>my-env-config</code>, all with matching names for the key/value pairs. This is a way to increase comprehensibility.
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">staging</span>
@@ -4435,7 +4531,7 @@
 <span class="w">            </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">token</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-env-config</span>
@@ -4466,7 +4562,7 @@
 <span class="w">        </span><span class="nt">regexp</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;^MY_ENV_VAR.*&quot;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
+<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-cert</span>
@@ -4638,10 +4734,10 @@ For a list of trademarks of The Linux Foundation, please see our <a href="https:
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.indexes", "navigation.expand"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
